@@ -1,0 +1,11 @@
+@{
+    ViewData["Title"] = "Home";
+}
+
+<h1>Student Course Registration</h1>
+<p class="lead">Register for a course, then check the student list to see everyone who has signed up.</p>
+
+<div class="actions">
+    <a class="btn" asp-controller="Student" asp-action="Create">Register a student</a>
+    <a class="btn btn-secondary" asp-controller="Student" asp-action="Index">View student list</a>
+</div>

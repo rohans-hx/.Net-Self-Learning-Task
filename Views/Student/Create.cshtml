@@ -1,0 +1,39 @@
+@model Student
+@{
+    ViewData["Title"] = "Register";
+}
+
+<h1>Register a student</h1>
+
+<form asp-action="Create" method="post">
+    <div asp-validation-summary="ModelOnly" class="field-error"></div>
+
+    <div class="field">
+        <label asp-for="Name"></label>
+        <input asp-for="Name" />
+        <span asp-validation-for="Name" class="field-error"></span>
+    </div>
+
+    <div class="field">
+        <label asp-for="Email"></label>
+        <input asp-for="Email" />
+        <span asp-validation-for="Email" class="field-error"></span>
+    </div>
+
+    <div class="field">
+        <label asp-for="Course"></label>
+        <select asp-for="Course" asp-items="(SelectList)ViewBag.Courses">
+            <option value="">-- Select a course --</option>
+        </select>
+        <span asp-validation-for="Course" class="field-error"></span>
+    </div>
+
+    <div class="field">
+        <label asp-for="Semester"></label>
+        <input asp-for="Semester" type="number" />
+        <span asp-validation-for="Semester" class="field-error"></span>
+    </div>
+
+    <button type="submit" class="btn">Register</button>
+    <a class="btn btn-secondary" asp-action="Index">Cancel</a>
+</form>
